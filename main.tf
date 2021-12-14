@@ -2,7 +2,7 @@ resource "aws_vpc" "vpc" {
   cidr_block           = var.vpc_cidr_block
   enable_dns_hostnames = true
   tags =         {
-      Name = "${var.cluster_name}-vpc"
+      Name = "${var.vpcname}-vpc"
     }
 }
 
@@ -15,7 +15,7 @@ resource "aws_subnet" "private_subnets" {
   vpc_id            = aws_vpc.vpc.id
   availability_zone = data.aws_availability_zones.availability_zones.names[count.index]
   tags = {
-      Name = "eks-private-${var.cluster_name}"
+      Name = "private-${var.vpcname}"
     }
 }
 
@@ -47,7 +47,7 @@ resource "aws_subnet" "public_subnets" {
   availability_zone = data.aws_availability_zones.availability_zones.names[count.index]
 
   tags =  {
-      "Name" = "eks-public-${var.cluster_name}"
+      "Name" = "public-${var.vpcname}"
     }
 }
 

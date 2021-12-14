@@ -10,7 +10,7 @@ variable "public_subnets" {
   type = list(string)
 }
 
-variable "cluster_name" {
+variable "vpcname" {
   type = string
 }
 
