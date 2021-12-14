@@ -1,12 +1,12 @@
-variable "eks_vpc_cidr_block" {
+variable "vpc_cidr_block" {
   type = string
 }
 
-variable "eks_private_subnets" {
+variable "private_subnets" {
   type = list(string)
 }
 
-variable "eks_public_subnets" {
+variable "public_subnets" {
   type = list(string)
 }
 
