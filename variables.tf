@@ -3,11 +3,11 @@ variable "vpc_cidr_block" {
 }
 
 variable "private_subnets" {
-  type = list(string)
+  type = string
 }
 
 variable "public_subnets" {
-  type = list(string)
+  type = string
 }
 
 variable "vpcname" {
